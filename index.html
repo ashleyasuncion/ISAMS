@@ -657,13 +657,13 @@
           </div>
         </div>
 
-        <a href="#" class="btn-primary">
+        <button class="btn-primary" onclick="handleDownload()">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
           Get Started
-        </a>
+        </button>
       </div>
 
       <!-- RIGHT: Screenshot mockup -->
@@ -854,6 +854,10 @@
       document.getElementById('url-bar').textContent = data.url;
       document.getElementById('caption-label').textContent = data.label;
       document.getElementById('caption-desc').textContent = data.desc;
+    }
+
+    function handleDownload() {
+      alert('The ISAMS desktop installer is not yet available.\nCheck back soon!');
     }
   </script>
 
