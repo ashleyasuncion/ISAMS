@@ -4,36 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISAMS — Integrated Smart Academic Management System</title>
+  <title>ISAMS</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <style>
-    /* ══════════════════════════════════════
-       GSDS TOKENS
-    ══════════════════════════════════════ */
     :root {
       --primary-500: #008a45;
       --primary-600: #006b35;
       --primary-700: #004d26;
-
+      --primary-800: #003d1f;
+      --primary-900: #002b15;
       --gold-400: #ffd700;
       --gold-500: #ffce00;
       --gold-600: #e6b800;
-
       --neutral-50: #f9fafb;
       --neutral-100: #f3f4f6;
       --neutral-200: #e5e7eb;
       --neutral-500: #6b7280;
       --neutral-900: #111827;
-
       --success: #10b981;
       --warning: #f59e0b;
       --destructive-semantic: #ef4444;
       --info: #3b82f6;
-
-      --gradient-primary: radial-gradient(ellipse at 70% 50%, #00a855 0%, #006b35 40%, #004d26 100%);
-      --gradient-heritage: linear-gradient(135deg, var(--primary-600) 0%, var(--gold-500) 100%);
+      --gradient-primary: linear-gradient(160deg, #002b15 0%, #004d26 60%, #006b35 100%);
+      --gradient-heritage: linear-gradient(135deg, #003d1f 0%, #005a2e 60%, #2d4a1e 100%);
       --gradient-accent: linear-gradient(135deg, var(--gold-600) 0%, var(--gold-400) 100%);
     }
 
@@ -42,11 +37,11 @@
     *::after {
       box-sizing: border-box;
       margin: 0;
-      padding: 0;
+      padding: 0
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: smooth
     }
 
     body {
@@ -56,12 +51,9 @@
       font-size: 15px;
       line-height: 1.65;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: hidden
     }
 
-    /* ══════════════════════════════════════
-       NAV
-    ══════════════════════════════════════ */
     nav {
       position: sticky;
       top: 0;
@@ -71,15 +63,15 @@
       justify-content: space-between;
       padding: 0 32px;
       height: 56px;
-      background: var(--primary-700);
-      border-bottom: 3px solid var(--gold-500);
+      background: var(--primary-900);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1)
     }
 
     .logo-mark {
       display: flex;
       align-items: center;
       gap: 10px;
-      text-decoration: none;
+      text-decoration: none
     }
 
     .logo-icon {
@@ -90,19 +82,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0
     }
 
     .logo-text {
       font-weight: 700;
       font-size: 18px;
       color: #fff;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.04em
     }
 
     .nav-right {
-      text-align: right;
+      text-align: right
     }
 
     .nav-brand-name {
@@ -110,30 +101,18 @@
       font-size: 11px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold-400);
+      color: rgba(255, 255, 255, 0.7)
     }
 
     .nav-brand-tagline {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.4)
     }
 
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
     .hero {
       background: var(--gradient-primary);
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(-45deg, transparent, transparent 40px,
-          rgba(255, 255, 255, 0.025) 40px, rgba(255, 255, 255, 0.025) 80px);
-      pointer-events: none;
+      overflow: hidden
     }
 
     .hero-inner {
@@ -143,8 +122,8 @@
       align-items: start;
       max-width: 1500px;
       margin: 0 auto;
-      padding: 80px 32px 80px;
-      position: relative;
+      padding: 80px 32px;
+      position: relative
     }
 
     h1 {
@@ -153,86 +132,86 @@
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 6px
     }
 
     .hero-tagline {
       font-weight: 600;
       font-size: clamp(15px, 1.8vw, 20px);
-      color: var(--gold-400);
-      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px
     }
 
     .hero-desc {
       font-size: 14.5px;
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.65);
       line-height: 1.75;
       max-width: 440px;
-      margin-bottom: 12px;
+      margin-bottom: 12px
     }
 
     .hero-sub {
-      font-size: 14.5px;
-      color: rgba(255, 255, 255, 0.58);
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.38);
       line-height: 1.65;
       max-width: 420px;
-      margin-bottom: 28px;
+      margin-bottom: 24px
     }
 
-    /* Module preview buttons */
     .module-btns {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 24px;
+      gap: 6px;
+      margin-bottom: 28px
     }
 
     .module-btn-row {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 6px;
+      flex-wrap: wrap
     }
 
     .module-btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       font-family: 'Inter', sans-serif;
       font-size: 12.5px;
-      font-weight: 600;
-      padding: 7px 14px;
+      font-weight: 500;
+      padding: 6px 13px;
       border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.85);
+      border: none;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.65);
       cursor: pointer;
-      transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
-      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap
     }
 
     .module-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.4);
-      color: #fff;
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.9)
     }
 
     .module-btn.active {
-      background: var(--gold-500);
-      border-color: var(--gold-500);
-      color: var(--neutral-900);
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff
     }
 
     .module-btn .dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: currentColor;
-      opacity: 0.6;
-      flex-shrink: 0;
+      opacity: 0.5;
+      flex-shrink: 0
     }
 
-    /* CTA button */
+    .module-btn.active .dot {
+      opacity: 1;
+      background: var(--gold-400)
+    }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -246,34 +225,27 @@
       border: none;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+      transition: background 0.15s, transform 0.15s
     }
 
     .btn-primary:hover {
       background: var(--gold-400);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      transform: translateY(-1px)
     }
 
-    /* ══════════════════════════════════════
-       SCREENSHOT MOCKUP
-    ══════════════════════════════════════ */
     .mockup-wrap {
       position: relative;
       align-self: center;
       transform: scale(1.08);
-      /* scale up */
-      transform-origin: center left;
+      transform-origin: center left
     }
 
-    /* Browser chrome frame */
     .mockup-frame {
       background: #1e2228;
-      border: 1px solid rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5)
     }
 
     .mockup-chrome {
@@ -283,50 +255,49 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       height: 32px;
       padding: 0 12px;
-      gap: 8px;
+      gap: 8px
     }
 
     .win-ctrl {
       display: flex;
       gap: 5px;
-      flex-shrink: 0;
+      flex-shrink: 0
     }
 
     .win-btn {
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.13)
     }
 
     .mockup-url {
       flex: 1;
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 4px;
       height: 18px;
       display: flex;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 10px
     }
 
     .mockup-url-text {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
-      color: #8a909e;
+      color: #8a909e
     }
 
-    /* Tab bar */
     .mockup-tabbar {
       display: flex;
       background: #1e2228;
-      border-bottom: 2px solid var(--gold-500);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding: 0 4px;
       overflow-x: auto;
-      scrollbar-width: none;
+      scrollbar-width: none
     }
 
     .mockup-tabbar::-webkit-scrollbar {
-      display: none;
+      display: none
     }
 
     .mockup-tab {
@@ -340,26 +311,25 @@
       white-space: nowrap;
       transition: color 0.15s, background 0.15s;
       border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
+      margin-bottom: -1px
     }
 
     .mockup-tab:hover {
-      color: #d4d8e0;
+      color: #d4d8e0
     }
 
     .mockup-tab.active {
       color: #fff;
       background: rgba(255, 255, 255, 0.05);
-      border-bottom: 2px solid var(--gold-500);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.4)
     }
 
-    /* Screenshot area */
     .mockup-screen {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 7;
+      aspect-ratio: 16/7;
       overflow: hidden;
-      background: #0f1117;
+      background: #0f1117
     }
 
     .mockup-screen img {
@@ -369,58 +339,51 @@
       height: 100%;
       object-fit: cover;
       object-position: top left;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease
     }
 
     .mockup-screen img.hidden {
       opacity: 0;
-      pointer-events: none;
+      pointer-events: none
     }
 
     .mockup-screen img.visible {
-      opacity: 1;
+      opacity: 1
     }
 
-    /* Caption bar */
     .mockup-caption {
       background: #1a1d22;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       padding: 7px 14px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between
     }
 
     .caption-label {
       font-family: 'Inter', sans-serif;
       font-size: 10.5px;
       font-weight: 600;
-      color: var(--gold-400);
+      color: rgba(255, 255, 255, 0.55);
       letter-spacing: 0.04em;
-      text-transform: uppercase;
+      text-transform: uppercase
     }
 
     .caption-desc {
       font-family: 'Inter', sans-serif;
       font-size: 10px;
-      color: #8a909e;
+      color: #8a909e
     }
 
-    /* ══════════════════════════════════════
-       DIVIDER
-    ══════════════════════════════════════ */
     .section-divider {
       border: none;
-      border-top: 1px solid var(--neutral-200);
+      border-top: 1px solid var(--neutral-200)
     }
 
-    /* ══════════════════════════════════════
-       FEATURES SECTION
-    ══════════════════════════════════════ */
     .features-section {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 64px 32px 80px;
+      padding: 64px 32px 80px
     }
 
     .section-label {
@@ -429,7 +392,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--primary-500);
-      margin-bottom: 8px;
+      margin-bottom: 8px
     }
 
     .features-section h2 {
@@ -437,7 +400,7 @@
       font-size: clamp(22px, 2.8vw, 32px);
       letter-spacing: -0.02em;
       color: var(--neutral-900);
-      margin-bottom: 12px;
+      margin-bottom: 12px
     }
 
     .section-intro {
@@ -445,13 +408,13 @@
       color: var(--neutral-500);
       line-height: 1.75;
       max-width: 600px;
-      margin-bottom: 40px;
+      margin-bottom: 40px
     }
 
     .feature-cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
+      gap: 16px
     }
 
     .card {
@@ -460,12 +423,12 @@
       border-radius: 10px;
       padding: 24px;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-      transition: box-shadow 0.15s, transform 0.15s;
+      transition: box-shadow 0.15s, transform 0.15s
     }
 
     .card:hover {
-      box-shadow: 0 4px 20px rgba(0, 138, 69, 0.13);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 138, 69, 0.1);
+      transform: translateY(-2px)
     }
 
     .card-icon {
@@ -476,12 +439,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 14px
     }
 
     .card-icon svg {
       width: 20px;
-      height: 20px;
+      height: 20px
     }
 
     .card-badge {
@@ -492,54 +455,51 @@
       text-transform: uppercase;
       padding: 2px 9px;
       border-radius: 4px;
-      margin-bottom: 10px;
+      margin-bottom: 10px
     }
 
     .badge-primary {
       background: #dcfce7;
-      color: #14532d;
+      color: #14532d
     }
 
     .badge-info {
       background: #dbeafe;
-      color: #1e40af;
+      color: #1e40af
     }
 
     .badge-warning {
       background: #fef3c7;
-      color: #92400e;
+      color: #92400e
     }
 
     .badge-success {
       background: #d1fae5;
-      color: #065f46;
+      color: #065f46
     }
 
     .badge-accent {
       background: #fef9c3;
-      color: #713f12;
+      color: #713f12
     }
 
     .card h3 {
       font-weight: 600;
       font-size: 14.5px;
       color: var(--neutral-900);
-      margin-bottom: 8px;
+      margin-bottom: 8px
     }
 
     .card p {
       font-size: 13.5px;
       color: var(--neutral-500);
-      line-height: 1.65;
+      line-height: 1.65
     }
 
-    /* ══════════════════════════════════════
-       HERITAGE BANNER
-    ══════════════════════════════════════ */
     .heritage-banner {
       background: var(--gradient-heritage);
       padding: 52px 32px;
-      text-align: center;
+      text-align: center
     }
 
     .heritage-banner .eyebrow {
@@ -547,52 +507,46 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.65);
-      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 10px
     }
 
     .heritage-banner h2 {
       font-weight: 700;
       font-size: clamp(18px, 2.5vw, 26px);
       letter-spacing: -0.01em;
-      color: #fff;
+      color: rgba(255, 255, 255, 0.85);
       max-width: 640px;
       margin: 0 auto;
-      line-height: 1.35;
+      line-height: 1.35
     }
 
-    /* ══════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════ */
     footer {
-      background: var(--primary-700);
+      background: var(--primary-900);
       text-align: center;
       padding: 28px 32px 36px;
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.35);
       font-size: 13px;
-      line-height: 1.9;
+      line-height: 1.9
     }
 
     footer strong {
-      color: var(--gold-400);
-      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 600
     }
 
-    /* ══════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════ */
-    @media (max-width: 820px) {
+    @media(max-width:820px) {
       nav {
-        padding: 0 20px;
+        padding: 0 20px
       }
 
       .hero-inner {
         grid-template-columns: 1fr;
-        padding: 48px 20px 40px;
+        padding: 48px 20px 40px
       }
 
       .features-section {
-        padding: 48px 20px 56px;
+        padding: 48px 20px 56px
       }
     }
   </style>
@@ -600,7 +554,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="logo-mark" href="#">
       <div class="logo-icon">
@@ -614,50 +567,35 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-
-      <!-- LEFT: Text + module buttons -->
       <div>
         <h1>ISAMS</h1>
         <p class="hero-tagline">Smart. Integrated. Academic.</p>
-        <p class="hero-desc">
-          An integrated smart academic management system with data analytics for
-          thesis archiving, faculty requirement submission, class list management,
-          student violation tracking, and laboratory time monitoring at the
-          College of Computer Studies.
-        </p>
-        <p class="hero-sub">
-          Click a module below to preview it live.
-        </p>
-
-        <!-- Interactive module switcher buttons -->
+        <p class="hero-desc">An integrated smart academic management system with data analytics for thesis archiving,
+          faculty requirement submission, class list management, student violation tracking, and laboratory time
+          monitoring at the College of Computer Studies.</p>
+        <p class="hero-sub">Click a module below to preview it live.</p>
         <div class="module-btns">
           <div class="module-btn-row">
-            <button class="module-btn active" data-module="home" onclick="switchModule(this)">
-              <span class="dot"></span> Home Dashboard
-            </button>
-            <button class="module-btn" data-module="thesis" onclick="switchModule(this)">
-              <span class="dot"></span> Thesis Archiving
-            </button>
+            <button class="module-btn active" data-module="home" onclick="switchModule(this)"><span class="dot"></span>
+              Home Dashboard</button>
+            <button class="module-btn" data-module="thesis" onclick="switchModule(this)"><span class="dot"></span>
+              Thesis Archiving</button>
           </div>
           <div class="module-btn-row">
-            <button class="module-btn" data-module="faculty" onclick="switchModule(this)">
-              <span class="dot"></span> Faculty Submission
-            </button>
-            <button class="module-btn" data-module="violation" onclick="switchModule(this)">
-              <span class="dot"></span> Violation Management
-            </button>
+            <button class="module-btn" data-module="faculty" onclick="switchModule(this)"><span class="dot"></span>
+              Faculty Submission</button>
+            <button class="module-btn" data-module="violation" onclick="switchModule(this)"><span class="dot"></span>
+              Violation Management</button>
           </div>
           <div class="module-btn-row">
-            <button class="module-btn" data-module="lab" onclick="switchModule(this)">
-              <span class="dot"></span> Lab Monitoring
-            </button>
+            <button class="module-btn" data-module="lab" onclick="switchModule(this)"><span class="dot"></span> Lab
+              Monitoring</button>
           </div>
         </div>
-
-        <button class="btn-primary" onclick="handleDownload()">
+        <button class="btn-primary"
+          onclick="alert('The ISAMS desktop installer is not yet available.\nCheck back soon!')">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -666,23 +604,16 @@
         </button>
       </div>
 
-      <!-- RIGHT: Screenshot mockup -->
       <div class="mockup-wrap">
         <div class="mockup-frame">
-
-          <!-- Browser chrome -->
           <div class="mockup-chrome">
             <div class="win-ctrl">
               <div class="win-btn"></div>
               <div class="win-btn"></div>
               <div class="win-btn"></div>
             </div>
-            <div class="mockup-url">
-              <span class="mockup-url-text" id="url-bar">isams.edu/dashboard</span>
-            </div>
+            <div class="mockup-url"><span class="mockup-url-text" id="url-bar">isams.edu/dashboard</span></div>
           </div>
-
-          <!-- Tabs -->
           <div class="mockup-tabbar">
             <div class="mockup-tab active" id="tab-home"
               onclick="switchModule(document.querySelector('[data-module=home]'))">Home</div>
@@ -695,121 +626,92 @@
             <div class="mockup-tab" id="tab-lab" onclick="switchModule(document.querySelector('[data-module=lab]'))">Lab
               Monitor</div>
           </div>
-
-          <!-- Screenshots -->
           <div class="mockup-screen">
             <img id="img-home" src="Homepage.png" class="visible" alt="ISAMS Home Dashboard" />
-            <img id="img-thesis" src="thesis_archiving_dashboard.png" class="hidden" alt="Thesis Archiving Dashboard" />
-            <img id="img-faculty" src="faculty_req_dashboard.png" class="hidden" alt="Faculty Requirement Dashboard" />
-            <img id="img-violation" src="student_violation_management.png" class="hidden"
-              alt="Student Violation Management" />
-            <img id="img-lab" src="lab_monitoring_dashboard.png" class="hidden" alt="Lab Monitoring Dashboard" />
+            <img id="img-thesis" src="thesis_archiving_dashboard.png" class="hidden" alt="Thesis Archiving" />
+            <img id="img-faculty" src="faculty_req_dashboard.png" class="hidden" alt="Faculty Requirement" />
+            <img id="img-violation" src="student_violation_management.png" class="hidden" alt="Violation Management" />
+            <img id="img-lab" src="lab_monitoring_dashboard.png" class="hidden" alt="Lab Monitoring" />
           </div>
-
-          <!-- Caption -->
           <div class="mockup-caption">
             <span class="caption-label" id="caption-label">Home Dashboard</span>
             <span class="caption-desc" id="caption-desc">ISAMS module overview</span>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
   <hr class="section-divider" />
 
-  <!-- FEATURES SECTION -->
   <section class="features-section">
     <p class="section-label">Platform Overview</p>
     <h2>What is ISAMS?</h2>
-    <p class="section-intro">
-      ISAMS replaces fragmented manual workflows and unstructured cloud storage with a unified,
-      intelligent platform that covers every major administrative and academic process at the
-      College of Computer Studies.
-    </p>
-
+    <p class="section-intro">ISAMS replaces fragmented manual workflows and unstructured cloud storage with a unified,
+      intelligent platform that covers every major administrative and academic process at the College of Computer
+      Studies.</p>
     <div class="feature-cards">
-
       <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 20 20" fill="none">
+        <div class="card-icon"><svg viewBox="0 0 20 20" fill="none">
             <rect x="3" y="4" width="14" height="13" rx="1.5" stroke="white" stroke-width="1.5" />
             <path d="M7 8h6M7 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-        </div>
+          </svg></div>
         <span class="card-badge badge-primary">Archiving</span>
         <h3>Thesis &amp; HTE Archiving</h3>
         <p>Centralized digital repository with search, research analytics dashboards, and NLP-based similarity detection
           to ensure originality across all submissions.</p>
       </div>
-
       <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 20 20" fill="none">
+        <div class="card-icon"><svg viewBox="0 0 20 20" fill="none">
             <path d="M10 12V4M7 7l3-3 3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
             <path d="M4 14v1a1 1 0 001 1h10a1 1 0 001-1v-1" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-        </div>
+          </svg></div>
         <span class="card-badge badge-info">Submissions</span>
         <h3>Faculty Requirement Submission</h3>
         <p>Replaces unstructured Google Drive with a rule-based portal featuring auto-validation, smart syllabus
           auditing, and one-click clearance certificate generation.</p>
       </div>
-
       <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 20 20" fill="none">
+        <div class="card-icon"><svg viewBox="0 0 20 20" fill="none">
             <path d="M10 2l7 3v5c0 3.5-3 6.5-7 8C7 16.5 4 13.5 4 10V5l6-3z" stroke="white" stroke-width="1.5"
               stroke-linejoin="round" />
             <path d="M10 8v3M10 13h.01" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-        </div>
+          </svg></div>
         <span class="card-badge badge-warning">Discipline</span>
         <h3>Student Violation Management</h3>
         <p>Logs offenses with evidence attachments and automatically suggests penalties based on violation severity and
           frequency, with full analytics dashboards.</p>
       </div>
-
       <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 20 20" fill="none">
+        <div class="card-icon"><svg viewBox="0 0 20 20" fill="none">
             <rect x="2" y="3" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5" />
             <path d="M7 17h6M10 14v3" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-        </div>
+          </svg></div>
         <span class="card-badge badge-success">Lab</span>
         <h3>Laboratory Time Monitoring</h3>
         <p>Barcode kiosk entry with ML-enhanced identity verification, real-time station mapping, predictive maintenance
           scheduling, and one-click attendance exports.</p>
       </div>
-
       <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 20 20" fill="none">
+        <div class="card-icon"><svg viewBox="0 0 20 20" fill="none">
             <path d="M3 15l4-5 4 3 4-7" stroke="white" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
             <circle cx="15" cy="6" r="1.5" fill="white" />
-          </svg>
-        </div>
+          </svg></div>
         <span class="card-badge badge-accent">Analytics</span>
         <h3>Data Analytics Throughout</h3>
         <p>Every module ships with dashboards, performance comparisons, traffic forecasting via linear regression, and
           exportable PDF/Excel reports for academic governance.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- HERITAGE BANNER -->
   <div class="heritage-banner">
     <p class="eyebrow">Green School Design System</p>
     <h2>"Institutional Integrity by Design" — ensuring every module produces a unified, consistent interface.</h2>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div>Built with <strong>React v19 + Vite + Tauri v2</strong>, styled with <strong>Tailwind CSS v4</strong>, powered
       by <strong>Supabase</strong>.</div>
@@ -817,50 +719,9 @@
   </footer>
 
   <script>
-    const moduleData = {
-      home: { url: 'isams.edu/dashboard', label: 'Home Dashboard', desc: 'ISAMS module overview' },
-      thesis: { url: 'isams.edu/thesis/dashboard', label: 'Thesis / HTE Archiving', desc: 'Digital repository & similarity detection' },
-      faculty: { url: 'isams.edu/faculty/dashboard', label: 'Faculty Requirement Submission', desc: 'Institutional submission dashboard' },
-      violation: { url: 'isams.edu/violations/dashboard', label: 'Student Violation Management', desc: 'Disciplinary tracking & analytics' },
-      lab: { url: 'isams.edu/laboratory/monitoring', label: 'Laboratory Time Monitoring', desc: 'Live occupancy & session management' },
-    };
-
-    function switchModule(btn) {
-      if (!btn) return;
-      const module = btn.dataset.module;
-      if (!module || !moduleData[module]) return;
-
-      // Update all side buttons
-      document.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active'));
-      document.querySelector(`.module-btn[data-module="${module}"]`)?.classList.add('active');
-
-      // Update all mockup tabs
-      document.querySelectorAll('.mockup-tab').forEach(t => t.classList.remove('active'));
-      document.getElementById(`tab-${module}`)?.classList.add('active');
-
-      // Swap images
-      document.querySelectorAll('.mockup-screen img').forEach(img => {
-        img.classList.remove('visible');
-        img.classList.add('hidden');
-      });
-      const target = document.getElementById(`img-${module}`);
-      if (target) {
-        target.classList.remove('hidden');
-        target.classList.add('visible');
-      }
-
-      // Update URL bar and caption
-      const data = moduleData[module];
-      document.getElementById('url-bar').textContent = data.url;
-      document.getElementById('caption-label').textContent = data.label;
-      document.getElementById('caption-desc').textContent = data.desc;
-    }
-
-    function handleDownload() {
-      alert('The ISAMS desktop installer is not yet available.\nCheck back soon!');
-    }
+    const moduleData = { home: { url: 'isams.edu/dashboard', label: 'Home Dashboard', desc: 'ISAMS module overview' }, thesis: { url: 'isams.edu/thesis/dashboard', label: 'Thesis / HTE Archiving', desc: 'Digital repository & similarity detection' }, faculty: { url: 'isams.edu/faculty/dashboard', label: 'Faculty Requirement Submission', desc: 'Institutional submission dashboard' }, violation: { url: 'isams.edu/violations/dashboard', label: 'Student Violation Management', desc: 'Disciplinary tracking & analytics' }, lab: { url: 'isams.edu/laboratory/monitoring', label: 'Laboratory Time Monitoring', desc: 'Live occupancy & session management' } };
+    function switchModule(btn) { if (!btn) return; const module = btn.dataset.module; if (!module || !moduleData[module]) return; document.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active')); document.querySelector(`.module-btn[data-module="${module}"]`)?.classList.add('active'); document.querySelectorAll('.mockup-tab').forEach(t => t.classList.remove('active')); document.getElementById(`tab-${module}`)?.classList.add('active'); document.querySelectorAll('.mockup-screen img').forEach(img => { img.classList.remove('visible'); img.classList.add('hidden') }); const target = document.getElementById(`img-${module}`); if (target) { target.classList.remove('hidden'); target.classList.add('visible') } const data = moduleData[module]; document.getElementById('url-bar').textContent = data.url; document.getElementById('caption-label').textContent = data.label; document.getElementById('caption-desc').textContent = data.desc }
   </script>
-
 </body>
 
 </html>
